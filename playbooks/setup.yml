@@ -1,0 +1,5 @@
+- name: Setup de base
+  hosts: all
+  become: true
+  roles:
+    - common
