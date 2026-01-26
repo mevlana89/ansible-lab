@@ -1,0 +1,6 @@
+- name: Test connection to hosts
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Ping the host
+      ping:
