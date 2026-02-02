@@ -1,6 +1,9 @@
-- name: Test connexion
+- name: Check deployment
   hosts: all
-  gather_facts: false
   tasks:
-    - name: Ping
-      ansible.builtin.ping:
+    - name: Read index
+      command: cat /opt/webapp/index.html
+      register: result
+
+    - debug:
+        var: result.stdout

@@ -1,10 +1,9 @@
-- name: Installer curl
-  package:
-    name: curl
-    state: present
+- name: Create app dir
+  file:
+    path: /opt/webapp
+    state: directory
 
-- name: Créer fichier de test
-  copy:
-    content: "Hello from AWX\n"
-    dest: /tmp/awx_test.txt
-
+- name: Deploy index.html
+  template:
+    src: index.html.j2
+    dest: /opt/webapp/index.html
