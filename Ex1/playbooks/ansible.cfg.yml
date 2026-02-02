@@ -1,7 +1,6 @@
 ---
 - name: Test ansible.cfg
-  hosts: localhost
-  gather_facts: no
+  hosts: all
   tasks:
     - name: Afficher le chemin du fichier de configuration utilise
       ansible.builtin.debug:
