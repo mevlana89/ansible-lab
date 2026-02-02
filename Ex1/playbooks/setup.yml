@@ -1,8 +1,8 @@
 - name: Setup de base
   hosts: all
   become: true
-#  roles:
-#    - common
+  roles:
+      - common
   tasks:
     - name: Debug variables
       debug:
