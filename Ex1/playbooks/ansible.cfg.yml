@@ -6,10 +6,8 @@
       ansible.builtin.debug:
         msg: "{{ lookup('env','ANSIBLE_CONFIG') }}"
 - hosts: all
+  gather_facts: no
   tasks:
-    - name: Vérifier le fichier ansible.cfg chargé
-      command: ansible --version
-      register: ansible_ver
-
-    - debug:
-        var: ansible_ver.stdout_lines
+    - name: Afficher le chemin du fichier ansible.cfg chargé
+      ansible.builtin.debug:
+        msg: "{{ ansible_config_file | default('aucun fichier ansible.cfg trouvé') }}"
