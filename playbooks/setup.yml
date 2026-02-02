@@ -6,4 +6,7 @@
   tasks:
     - name: Debug variables
       debug:
-        msg: "Student={{ student_name }}"
+        msg:
+          - "App={{ app_name }}"
+          - "Env={{ env }}"
+          - "Port={{ nginx_port }}"
