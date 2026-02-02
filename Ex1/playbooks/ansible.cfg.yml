@@ -1,0 +1,8 @@
+---
+- name: Test ansible.cfg
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Afficher le chemin du fichier de configuration utilise
+      ansible.builtin.debug:
+        msg: "{{ lookup('env','ANSIBLE_CONFIG') }}"
