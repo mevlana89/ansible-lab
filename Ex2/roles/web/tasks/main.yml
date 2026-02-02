@@ -1,0 +1,10 @@
+- name: Installer curl
+  package:
+    name: curl
+    state: present
+
+- name: Créer fichier de test
+  copy:
+    content: "Hello from AWX\n"
+    dest: /tmp/awx_test.txt
+
