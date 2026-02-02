@@ -3,3 +3,7 @@
   become: true
   roles:
     - common
+  tasks:
+    - name: Debug variables
+      debug:
+        msg: "Student={{ student_name }}"

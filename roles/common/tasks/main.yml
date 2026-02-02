@@ -7,3 +7,4 @@
   copy:
     content: "Hello from AWX\n"
     dest: /tmp/awx_test.txt
+
