@@ -10,3 +10,16 @@
           - "App={{ app_name }}"
           - "Env={{ env }}"
           - "Port={{ nginx_port }}"
+
+- name: Test ansible.cfg
+  hosts: all
+  tasks:
+    - name: Afficher le chemin du fichier de configuration utilise
+      ansible.builtin.debug:
+        msg: "{{ lookup('env','ANSIBLE_CONFIG') }}"
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Afficher le chemin du fichier ansible.cfg chargé
+      ansible.builtin.debug:
+        msg: "{{ ansible_config_file | default('aucun fichier ansible.cfg trouvé') }}"
